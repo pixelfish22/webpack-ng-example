@@ -1,0 +1,13 @@
+@import '~reset';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.viewport {
+  display: block;
+  position: relative;
+  width: 80%;
+  left: 20%;
+}

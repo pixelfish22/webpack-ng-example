@@ -11,8 +11,6 @@ function UsersAPI() {
 
     this.rand = Math.random();
 
-    var _private = true;
-
     this.publicMethod = function() {
         console.log('where am i?', this.rand);
 

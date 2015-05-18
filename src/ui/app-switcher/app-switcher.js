@@ -26,6 +26,14 @@ function AppSwitcherDirective() {
     };
 }
 
+/**
+ * This is the controller for the App Switcher
+ *
+ * @param $scope
+ * @param usersApi
+ * @constructor
+ * @ngInject
+ */
 function AppSwitcherController($scope, usersApi) {
 
     console.log('usersApi from app switcher', usersApi.publicMethod());
@@ -36,7 +44,7 @@ function AppSwitcherController($scope, usersApi) {
         this.isOpen = true;
         $scope.$apply();
         console.log('open app switcher');
-        throw new Error('this is a forced error');
+        throw new Error('this is a forced error from the app switcher');
     };
 
     this.close = function() {

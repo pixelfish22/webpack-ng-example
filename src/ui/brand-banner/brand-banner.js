@@ -23,13 +23,18 @@ function BrandBannerDirective() {
         link: function (scope, element, attrs, controller) {
 
             console.log('brand banner element', element);
-
             controller.test();
 
         }
     };
 }
 
+/**
+ *
+ * @param usersApi
+ * @constructor
+ * @ngInject
+ */
 function BrandBannerController(usersApi) {
 
     this.test = function() {

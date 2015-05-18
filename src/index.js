@@ -1,12 +1,8 @@
 var angular = require('angular');
-var normalize = require('normalize.scss/normalize.scss');
-
-var sidebar = require('sidebar').name;
-var banner = require('brand-banner').name;
-var switcher = require('app-switcher').name;
+var layout = require('layout').name;
 
 angular
-    .module('spscp', [sidebar, banner, switcher])
+    .module('spscp', [layout])
     .factory('$exceptionHandler', require('exceptionHandler'))
     .controller('testCont', function(){
 
