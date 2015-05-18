@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>OY!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+
+    .viewport {
+      display: block;
+      position: relative;
+      width: 80%;
+      left: 20%;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="dist/styles.css">
+  <script src="dist/vendors.js"></script>
+</head>
+<body ng-app="spscp" ng-cloak>
+
+<div ng-controller="testCont as test">
+
+  <sps-brand-banner>
+    <app-switcher></app-switcher>
+  </sps-brand-banner>
+
+  <sps-sidebar hook-to="test" hook-as="mySidebar"></sps-sidebar>
+
+  <div class="viewport">
+    <a href="" ng-click="test.publicMethod()">test.publicMethod()</a>
+    <a href="" ng-click="test.mySidebar.toggle()">test.mySidebar.toggle()</a>
+  </div>
+
+</div>
+
+
+<script src="dist/app.js"></script>
+</body>
+</html>

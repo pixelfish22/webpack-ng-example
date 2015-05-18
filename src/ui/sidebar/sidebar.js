@@ -1,0 +1,49 @@
+var angular = require('angular');
+
+module.exports = angular
+    .module('sidebar', [])
+    .directive('spsSidebar', SidebarDirective);
+
+function SidebarDirective() {
+    return {
+        restrict: 'E',
+        controllerAs: 'sidebar',
+        controller: SidebarController,
+        scope: {hookTo: '=', hookAs: '@'},
+        templateUrl: require('./sidebar.html'),
+        link: function (scope, element, attrs, controller) {
+
+            if (scope.hookTo) {
+                var ns = scope.hookAs || 'sidebar';
+                scope.hookTo[ns] = controller;
+            }
+
+            controller.items = [
+                {id: 1, label: 'one'},
+                {id: 2, label: 'two'},
+                {id: 3, label: 'three'},
+                {id: 4, label: 'four'}
+            ];
+
+        }
+    };
+}
+
+function SidebarController($scope) {
+
+    this.update = function(items) {
+        this.items = items;
+        $scope.apply();
+    };
+
+    this.navigateTo = function(id) {
+        console.log('sidebar navigate to', id);
+    };
+
+    this.toggle = function() {
+        console.log('toggle sidebar');
+    };
+
+}
+
+
