@@ -1,0 +1,20 @@
+<div ng-controller="testCont as test">
+
+    <sps-brand-banner>
+        <app-switcher></app-switcher>
+        <app-switcher></app-switcher>
+    </sps-brand-banner>
+
+    <sps-sidebar hook-to="test" hook-as="sidebar1"></sps-sidebar>
+
+    <datepicker ng-model="test.startDate"></datepicker>
+
+    <viewport>
+
+        <a href="" ng-click="test.publicMethod()">test.publicMethod()</a>
+
+        <a href="" ng-click="test.sidebar1.toggle()">test.sidebar.toggle()</a>
+
+    </viewport>
+
+</div>

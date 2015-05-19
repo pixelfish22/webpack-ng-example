@@ -1,8 +1,9 @@
 var angular = require('angular');
-var layout = require('layout').name;
+var chassis = require('chassis').name;
+var router = require('angular-ui-router');
 
 angular
-    .module('spscp', [layout])
+    .module('spscp', [chassis, router])
     .factory('$exceptionHandler', require('exceptionHandler'))
     .controller('testCont', function(){
 
