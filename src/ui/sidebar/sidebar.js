@@ -1,9 +1,13 @@
-var angular = require('angular');
 
-module.exports = angular
-    .module('sidebar', [])
-    .directive('spsSidebar', SidebarDirective);
+module.exports =
 
+require('spsui').directive('spsSidebar', SidebarDirective);
+
+/**
+ *
+ * @returns Directive
+ * @constructor
+ */
 function SidebarDirective() {
     return {
         restrict: 'E',
@@ -24,11 +28,16 @@ function SidebarDirective() {
                 {id: 3, label: 'three'},
                 {id: 4, label: 'four'}
             ];
-
         }
     };
 }
 
+/**
+ *
+ * @param $scope
+ * @constructor
+ * @ngInject
+ */
 function SidebarController($scope) {
 
     this.update = function(items) {

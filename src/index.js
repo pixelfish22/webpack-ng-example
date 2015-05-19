@@ -1,6 +1,6 @@
 var angular = require('angular');
-var chassis = require('chassis').name;
 var router = require('angular-ui-router');
+var chassis = require('chassis').name;
 
 angular
     .module('spscp', [chassis, router])

@@ -1,10 +1,11 @@
 var angular = require('angular');
+var spsui = require('spsui').name;
 var sidebar = require('sidebar').name;
 var banner = require('brand-banner').name;
 var switcher = require('app-switcher').name;
 
 module.exports = angular
-    .module('chassis', [sidebar, banner, switcher])
+    .module('chassis', [spsui])
     .directive('spsChassis', ChassisDirective);
 
 /**

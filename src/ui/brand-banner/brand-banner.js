@@ -1,11 +1,11 @@
 var switcher = require('app-switcher').name;
+var usersApi = require('users-api');
 
 module.exports =
 
-require('angular')
-    .module('brand-banner', [switcher])
+require('spsui')
     .directive('spsBrandBanner', BrandBannerDirective)
-    .service('usersApi', require('users.api'));
+    .service('usersService', usersApi.getService());
 
 /**
  * Brand Banner
@@ -22,7 +22,6 @@ function BrandBannerDirective() {
         templateUrl: require('./brand-banner.html'),
         link: function (scope, element, attrs, controller) {
 
-            console.log('brand banner element', element);
             controller.test();
 
         }
@@ -31,14 +30,16 @@ function BrandBannerDirective() {
 
 /**
  *
- * @param usersApi
  * @constructor
  * @ngInject
  */
-function BrandBannerController(usersApi) {
+function BrandBannerController(usersService) {
+
+    var usersInstance = usersApi.getInstance();
 
     this.test = function() {
-        console.log('usersApi from brand-banner', usersApi.publicMethod());
+        console.log('Calling usersService from brand-banner', usersService.publicMethod());
+        console.log('Calling usersInstance from brand-banner', usersInstance.publicMethod());
     }
 
 }
